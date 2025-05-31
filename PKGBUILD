@@ -24,5 +24,6 @@ build() {
 package() {
 	cd "$_archive"
 	make DESTDIR="$pkgdir" PREFIX=/usr install
+	make DESTDIR="$pkgdir" PREFIX=/usr setcap
 }
 
