@@ -1,5 +1,5 @@
 [btop]
 source = "github"
-github = "aristocratos/btop"
+github = "yuheho7749/btop"
 prefix = "v"
 use_max_tag = true

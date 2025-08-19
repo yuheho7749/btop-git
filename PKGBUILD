@@ -1,28 +1,30 @@
-# Maintainer: Caleb Maclennan <caleb@alerque.com>
+# Maintainer: yuheho7749 <yuheho7749 at gmail dot com>
 
-pkgname=btop
+_pkgname=btop
+pkgname=$_pkgname-git
 pkgver=1.4.4
 pkgrel=1
 pkgdesc='A monitor of system resources, bpytop ported to C++'
 arch=(x86_64)
-url="https://github.com/aristocratos/$pkgname"
+url="https://github.com/yuheho7749/$_pkgname"
 license=(Apache-2.0)
 depends=(gcc-libs
          glibc)
 makedepends=(lowdown
              rocm-smi-lib)
 optdepends=('rocm-smi-lib: AMD GPU support')
-_archive="$pkgname-$pkgver"
-source=("$url/archive/v$pkgver/$_archive.tar.gz")
-sha256sums=('98d464041015c888c7b48de14ece5ebc6e410bc00ca7bb7c5a8010fe781f1dd8')
+conflicts=('btop')
+
+source=("$_pkgname::git+$url.git")
+sha256sums=("SKIP")
 
 build() {
-	cd "$_archive"
+	cd "$_pkgname"
 	make all
 }
 
 package() {
-	cd "$_archive"
+	cd "$_pkgname"
 	make DESTDIR="$pkgdir" PREFIX=/usr install
 	make DESTDIR="$pkgdir" PREFIX=/usr setcap
 }
