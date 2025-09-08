@@ -1,7 +1,7 @@
 pkgbase = btop-git
 	pkgdesc = A monitor of system resources, bpytop ported to C++
 	pkgver = 1.4.4
-	pkgrel = 1
+	pkgrel = 5
 	url = https://github.com/yuheho7749/btop
 	arch = x86_64
 	license = Apache-2.0
