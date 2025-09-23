@@ -2,8 +2,8 @@
 
 _pkgname=btop
 pkgname=$_pkgname-git
-pkgver=1.4.4
-pkgrel=5
+pkgver=1.4.5
+pkgrel=1
 pkgdesc='A monitor of system resources, bpytop ported to C++'
 arch=(x86_64)
 url="https://github.com/yuheho7749/$_pkgname"
